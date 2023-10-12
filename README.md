@@ -16,13 +16,25 @@ POSTGRES_PASSWORD=mypassword
 POSTGRES_PORT=5432
 ```
 
-chmod +x ./wait-for-it.sh  
-docker-compose up --build  
+# Make the wait-for-it.sh script executable
+```
+chmod +x ./wait-for-it.sh
+```
+# Build and run the Docker containers
+```
+docker-compose up --build
+```
 
-docker-compose run web python manage.py makemigrations menu  
-docker-compose run web python manage.py migrate  
-docker-compose run web python manage.py createsuperuser  
-docker-compose run web python manage.py shell  
-exec(open('fill_db.py').read())  
+# Run Django database migrations and create a superuser
+```
+docker-compose run web python manage.py makemigrations menu
+docker-compose run web python manage.py migrate
+docker-compose run web python manage.py createsuperuser
+```
 
+# Enter Django shell to execute fill_db.py script
+```
+docker-compose run web python manage.py shell
+exec(open('fill_db.py').read())
+```
 Test!
