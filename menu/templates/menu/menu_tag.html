@@ -1,0 +1,10 @@
+<ul>
+    {% for value in menu.values %}
+      <li>
+        <a href="http://0.0.0.0:8000{{ value.root.path }}">{{ value.root.name }}</a>
+        {% if value.child %}
+            {% include 'menu/menu_tag.html' with menu=value.child %}
+        {% endif %}
+      </li>
+    {% endfor %}
+</ul>
