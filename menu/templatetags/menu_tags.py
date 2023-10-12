@@ -9,10 +9,9 @@ def draw_menu(context: Dict[str, Any], menu_name: str):
     name = context.get('name')
     
     if name is not None:
-        print(name)
         menu_objects = TreeMenu.get_ancestors(name, menu_name)
         menu_objects = sorted(menu_objects, key=lambda x: x.path)
-        print(menu_objects)
+        
         menu = {}
 
         for obj in menu_objects:
