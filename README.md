@@ -1,6 +1,15 @@
 # TreeMenu
 
 nano .env  
+```
+SECRET_KEY=mysecretkey
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+
+POSTGRES_DB=mydatabase
+POSTGRES_USER=myuser
+POSTGRES_PASSWORD=mypassword
+```
 chmod +x ./wait-for-it.sh  
 docker-compose up --build  
 
