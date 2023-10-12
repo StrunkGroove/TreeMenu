@@ -1,5 +1,7 @@
 # TreeMenu
 
+In the task, Materialized Path was used.
+
 nano .env  
 ```
 SECRET_KEY=mysecretkey
