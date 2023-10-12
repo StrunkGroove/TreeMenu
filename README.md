@@ -3,7 +3,6 @@
 nano .env  
 chmod +x ./wait-for-it.sh  
 docker-compose up --build  
-docker-compose up  
 
 docker-compose run web python manage.py makemigrations menu  
 docker-compose run web python manage.py migrate menu  
