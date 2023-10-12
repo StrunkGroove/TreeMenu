@@ -13,6 +13,7 @@ ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
 POSTGRES_DB=mydatabase
 POSTGRES_USER=myuser
 POSTGRES_PASSWORD=mypassword
+POSTGRES_PORT=5432
 ```
 
 chmod +x ./wait-for-it.sh  
