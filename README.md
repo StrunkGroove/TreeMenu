@@ -3,8 +3,10 @@
 In the task, Materialized Path was used.
 
 
-For start:  
+For start:
+```
 nano .env  
+```
 ```
 SECRET_KEY=mysecretkey
 DEBUG=True
@@ -35,6 +37,8 @@ docker-compose run web python manage.py createsuperuser
 ### Enter Django shell to execute fill_db.py script
 ```
 docker-compose run web python manage.py shell
+```
+```
 exec(open('fill_db.py').read())
 ```
 Test!
