@@ -3,7 +3,7 @@
 In the task, Materialized Path was used.
 
 
-For start:
+For start:  
 nano .env  
 ```
 SECRET_KEY=mysecretkey
