@@ -1,8 +1,19 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
+class TreeMenuValidator:
+    @staticmethod
+    def validate_no_slash(value):
+        if '/' in value:
+            raise ValidationError("Символ / недопустим в поле.")
+    
 class TreeMenu(models.Model):
-    name = models.CharField(max_length=255, unique=True)
+    name = models.CharField(
+        max_length=255,
+        unique=True,
+        validators=[TreeMenuValidator.validate_no_slash]
+    )
     path = models.CharField(max_length=255, blank=True)
     table_name = models.CharField(max_length=255)
     parent = models.ForeignKey(
@@ -11,7 +22,7 @@ class TreeMenu(models.Model):
         blank=True,
         on_delete=models.CASCADE
     )
-
+        
     @classmethod
     def get_ancestors(cls, name, table):
         name_model = cls._meta.db_table
